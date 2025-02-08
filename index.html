@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sarthak Movie Hub</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body class="bg-black text-white">
+<nav class="fixed w-full p-4 z-50 flex items-center justify-between bg-gradient-to-b from-black/70">
+  <h1 class = "name">Sarthak's Movie Hub</h1>
+  <div class="flex items-center gap-4">
+    <div class="relative">
+      <input type="text" id="search" placeholder="Search movies..." class="bg-black/50 border border-white/20 rounded px-4 py-2 focus:outline-none focus:border-white" />
+      <button id="voiceSearch" class="absolute right-2 top-1/2 -translate-y-1/2">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
+        </svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<header class="relative h-screen">
+  <div id="hero" class="absolute inset-0 bg-cover bg-center"></div>
+  <div class="absolute inset-0 bg-gradient-to-t from-black"></div>
+  <div class="absolute bottom-0 left-0 p-8">
+    <h1 id="heroTitle" class="text-5xl font-bold mb-4"></h1>
+    <p id="heroOverview" class="text-lg max-w-2xl mb-4"></p>
+    <button class="bg-white text-black px-8 py-2 rounded font-bold hover:bg-white/80 transition">Play</button>
+  </div>
+</header>
+
+<main class="relative -mt-32 z-10 px-8">
+  <h2 class="text-2xl font-bold mb-4">Trending Now</h2>
+  <div id="trendingMovies" class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4"></div>
+
+  <h2 class="text-2xl font-bold mb-4 mt-8">My List</h2>
+  <div id="myList" class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4"></div>
+</main>
+
+<div id="movieModal" class="fixed inset-0 z-[100] bg-black/80 hidden">
+  <div class="fixed inset-0 flex items-center justify-center p-4">
+    <div class="bg-zinc-900 max-w-4xl w-full rounded-lg overflow-hidden">
+      <div class="flex justify-between items-center p-4 bg-zinc-800">
+        <h2 id="modalTitle" class="text-2xl font-bold"></h2>
+        <button id="closeModal" class="text-white/60 hover:text-white text-3xl leading-none">&times;</button>
+      </div>
+      <div id="modalContent" class="p-4"></div>
+    </div>
+  </div>
+</div>
+
+<script type="module" src="/main.js"></script>
+</body>
+</html>
