@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.name {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    color: #ffffff;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7),
+    0px 0px 15px #ff5733,
+    0px 0px 30px #ffc300;
+    background: linear-gradient(90deg, #ff6b6b, #ffc300, #4ecdc4);
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: gradientMove 3s infinite;
+}
+
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+.movie-card {
+    @apply relative overflow-hidden rounded transition-transform duration-300 hover:scale-105;
+}
+
+.movie-card img {
+    @apply w-full h-auto;
+}
+
+.movie-card .overlay {
+    @apply absolute inset-0 bg-gradient-to-t from-black/80 opacity-0 transition-opacity duration-300 flex items-end p-4;
+}
+
+.movie-card:hover .overlay {
+    @apply opacity-100;
+}
